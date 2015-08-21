@@ -1,12 +1,13 @@
 define([
   'angular', 
   'angular-couch-potato', 
-  'angular-ui-router'
+  'angular-ui-router',
+  'angular-messages'
 ], function (ng, couchPotato) {
   
   'use strict';
 
-  var module = ng.module('app.showcase', ['ui.router']);
+  var module = ng.module('app.showcase', ['ui.router', 'ngMessages']);
 
   module.config(['$stateProvider', '$couchPotatoProvider', function($stateProvider, $couchPotatoProvider) {
     $stateProvider

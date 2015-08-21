@@ -10,6 +10,7 @@ define([
   var app = ng.module('app', [
     'scs.couch-potato',
     'ngMaterial',
+    'ngMessages',
     'ui.router',
 
     'app.layout',

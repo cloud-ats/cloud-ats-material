@@ -7,6 +7,7 @@ var require = {
     'angular-cookies': '../plugin/angular-cookies/angular-cookies.min',
     'angular-resource': '../plugin/angular-resource/angular-resource.min',
     'angular-sanitize': '../plugin/angular-sanitize/angular-sanitize.min',
+    'angular-messages': '../plugin/angular-messages/angular-messages.min',
     'angular-aria': '../plugin/angular-aria/angular-aria.min',
 
     'angular-ui-router': '../plugin/angular-ui-router/release/angular-ui-router.min',
@@ -25,6 +26,7 @@ var require = {
     'angular-cookies': { deps: ['angular'] },
     'angular-resource': { deps: ['angular'] },
     'angular-sanitize': { deps: ['angular'] },
+    'angular-messages': { deps: ['angular'] },
     'angular-aria': { deps: ['angular']},
 
     'angular-ui-router': { deps: ['angular'] },
