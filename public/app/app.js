@@ -4,12 +4,12 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router',
-  'angular-animate'
+  'angular-material'
 ], function (ng, couchPotato) {
 
   var app = ng.module('app', [
     'scs.couch-potato',
-    'ngAnimate',
+    'ngMaterial',
     'ui.router',
 
     'app.layout',

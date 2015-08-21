@@ -15,8 +15,10 @@ define([
       views: {
         'content@app': {
           templateUrl: 'app/showcase/views/showcase.tpl.html',
+          controller: 'ShowCaseCtrl',
           resolve: {
             deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/showcase-controller'
             ])
           }
         }
