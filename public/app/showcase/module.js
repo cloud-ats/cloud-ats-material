@@ -54,6 +54,14 @@ define([
         }
       }
     })
+    .state('app.showcase.button', {
+      url: '/button',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/button-basic.tpl.html'
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
