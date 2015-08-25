@@ -62,6 +62,14 @@ define([
         }
       }
     })
+    .state('app.showcase.card', {
+      url: '/card',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/card.tpl.html'
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
