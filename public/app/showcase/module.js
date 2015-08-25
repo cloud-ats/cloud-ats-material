@@ -70,6 +70,19 @@ define([
         }
       }
     })
+    .state('app.showcase.checkbox', {
+      url: '/checkbox',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/checkbox.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/checkbox-controller'
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);

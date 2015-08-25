@@ -65,3 +65,30 @@
   opacity: 0.54;
 }
 
+.checkboxdemoBasicUsage fieldset.standard,
+.checkboxdemoSyncing fieldset.standard {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.checkboxdemoBasicUsage legend,
+.checkboxdemoSyncing legend {
+  color: #3F51B5
+}
+.checkboxdemoBasicUsage legend code,
+.checkboxdemoSyncing legend code {
+  color: #3F51B5;
+  font-weight: normal;
+}
+.checkboxdemoBasicUsage .ipsum {
+  color: saddlebrown;
+}
+
+.checkboxdemoSyncing div {
+  clear: both;
+}
+
+.checkboxdemoSyncing div.standard {
+  padding: 8px;
+  padding-left: 15px; 
+}
