@@ -97,6 +97,14 @@ define([
         }
       }
     })
+    .state('app.showcase.toolbar',  {
+      url: '/toolbar',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/toolbar.tpl.html'
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
