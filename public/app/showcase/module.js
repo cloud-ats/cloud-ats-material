@@ -91,7 +91,8 @@ define([
           resolve: {
             deps: $couchPotatoProvider.resolveDependencies([
               'showcase/controllers/chips-controller',
-              'showcase/controllers/contact-chips-controller'
+              'showcase/controllers/contact-chips-controller',
+              'showcase/controllers/custom-input-controller'
             ])
           }
         }
