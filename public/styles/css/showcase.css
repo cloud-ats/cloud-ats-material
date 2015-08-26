@@ -177,3 +177,7 @@
 .chipsdemoContactChips .md-chips {
   padding: 5px 0 8px;
 }
+
+#popupContainer {
+  position: relative;
+}

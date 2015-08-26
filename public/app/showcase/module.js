@@ -105,6 +105,19 @@ define([
         }
       }
     })
+    .state('app.showcase.dialog', {
+      url: '/dialog',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/dialog.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/dialog-controller'
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
