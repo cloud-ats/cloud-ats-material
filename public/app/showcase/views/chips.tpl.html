@@ -1,0 +1,73 @@
+<div id="content">
+  <div ng-controller="ChipsCtrl as ctrl" layout="column" class="chipsdemoBasicUsage">
+    <md-content class="md-padding" layout="column">
+      
+      <h2 class="md-title">Use a custom chip template.</h2>
+      <md-chips ng-model="ctrl.roFruitNames" readonly="ctrl.readonly">
+        <md-chip-template>
+          <strong>{{$chip}}</strong>
+          <em>(fruit)</em>
+        </md-chip-template>
+      </md-chips>
+      <br/>
+      
+      <h2 class="md-title">Use the default chip template.</h2>
+      <md-chips ng-model="ctrl.roFruitNames" readonly="ctrl.readonly"></md-chips>
+      <br/>
+
+      <h2 class="md-title">Use placeholder and override hint texts.</h2>
+      <md-chips
+        ng-model="ctrl.tags"
+        readonly="ctrl.readonly"
+        placeholder="Enter a tag"
+        delete-button-label="Remove a Tag"
+        delete-hint="Press delete to remove tag"
+        secondary-placeholder="+Tag"></md-chips>
+
+      <h2 class="md-title">Display an ordered set of objects as chips (with custom template).</h2>
+      <md-chips class="custom-chips" ng-model="ctrl.vegObjs" readonly="ctrl.readonly" md-on-append="ctrl.newVeg($chip)">
+        <md-chip-template>
+          <span>{{$chip.name}}</span>
+          <em>({{$chip.type}})</em>
+        </md-chip-template>
+        <button md-chip-remove class="md-primary vegetablechip">
+          <md-icon md-svg-icon="md-close"></md-icon>
+        </button>
+      </md-chips>
+    </md-content>
+  </div>
+
+  <div ng-controller="ContactChipCtrl as ctrl" layout="column" class="chipsdemoContactChips">
+    <md-content class="md-padding autocomplete" layout="column">
+      <md-contact-chips
+        ng-model="ctrl.contacts"
+        md-contacts="ctrl.querySearch($query)"
+        md-contact-name="name"
+        md-contact-image="image"
+        md-contact-email="email"
+        md-require-match
+        filter-selected="ctrl.filterSelected"
+        placeholder="To">
+      </md-contact-chips>
+      <md-list class="fixedRows">
+        <md-subheader class="md-no-stricky">Contacts</md-subheader>
+        <md-list-item class="md-2-line contact-item" 
+          ng-repeat="(index, contact) in ctrl.allContacts" ng-if="ctrl.contacts.indexOf(contact) < 0">
+          <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
+          <div class="md-list-item-text compact">
+            <h3>{{contact.name}}</h3>
+            <p>{{contact.email}}</p>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, contact) in ctrl.contacts">
+          <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
+          <div class="md-list-item-text compact">
+            <h3>{{contact.name}}</h3>
+            <p>{{contact.email}}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+
+</div>

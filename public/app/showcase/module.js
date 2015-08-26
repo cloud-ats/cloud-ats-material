@@ -83,6 +83,20 @@ define([
         }
       }
     })
+    .state('app.showcase.chips', {
+      url: '/chips',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/chips.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/chips-controller',
+              'showcase/controllers/contact-chips-controller'
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
