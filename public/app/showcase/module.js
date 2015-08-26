@@ -119,6 +119,19 @@ define([
         }
       }
     })
+    .state('app.showcase.divider', {
+      url: '/divider',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/divider.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/divider-controller'
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
