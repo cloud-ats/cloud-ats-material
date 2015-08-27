@@ -132,6 +132,19 @@ define([
         }
       }
     })
+    .state('app.showcase.fab-speed-dial', {
+      url: '/fab-speed-dial',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/fab-speed-dial.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/fab-speed-dial-controller'
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
