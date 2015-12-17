@@ -9,8 +9,8 @@ define([
 
   var module = ng.module('app.showcase', ['ui.router', 'ngMessages']);
 
-  module.config(['$stateProvider', '$couchPotatoProvider', '$mdIconProvider', 
-    function($stateProvider, $couchPotatoProvider, $mdIconProvider) {
+  module.config(['$stateProvider', '$couchPotatoProvider', '$mdIconProvider', '$mdThemingProvider', 
+    function($stateProvider, $couchPotatoProvider, $mdIconProvider, $mdThemingProvider) {
 
     $mdIconProvider
       .icon('share-arrow', 'styles/img/icons/share-arrow.svg', 24)
@@ -28,6 +28,11 @@ define([
       .icon('label', 'stypes/img/icons/ic_label_24px.svg', 24)
       .icon('menu', 'stypes/img/icons/ic_menu_24px.svg', 24)
       .icon('avatar', 'styles/img/icons/avatar-icons.svg', 128);
+    $mdThemingProvider.
+      theme('default')
+      .primaryPalette("red")
+      .accentPalette('green')
+      .warnPalette('blue');
 
     $stateProvider
     .state('app.showcase', {
@@ -169,6 +174,18 @@ define([
           resolve: {
             deps: $couchPotatoProvider.resolveDependencies([
               'showcase/controllers/grid-list-controller'
+            ])
+          }
+        }
+      }
+    }).state('app.showcase.icon', {
+      url: '/icon',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/icon.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/icon-controller'
             ])
           }
         }
