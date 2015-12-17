@@ -31,6 +31,7 @@ define([
       .iconSet('social', 'styles/img/icons/sets/social-icons.svg', 24)
       .iconSet('device', 'styles/img/icons/sets/device-icons.svg', 24)
       .iconSet('communication', 'styles/img/icons/sets/communication-icons.svg', 24)
+      .iconSet("call", 'styles/img/icons/sets/communication-icons.svg', 24)
       .defaultIconSet('styles/img/icons/sets/core-icons.svg', 24);
     $mdThemingProvider
       .theme('docs-dark','default')
@@ -214,6 +215,19 @@ define([
           resolve: {
             deps: $couchPotatoProvider.resolveDependencies([
               'showcase/controllers/list-controller'
+            ])
+          }
+        }
+      }
+    })
+    .state('app.showcase.menu', {
+      url: '/menu',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/menu.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/menu-controller'
             ])
           }
         }

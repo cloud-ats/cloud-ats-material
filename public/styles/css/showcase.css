@@ -449,3 +449,15 @@ md-list-item > p, .md-list-item-inner > p, .md-list-item-inner > p {
 .secondary-button-padding p {
   padding-right: 100px; 
 }
+.menudemoBasicUsage .md-menu-demo {
+  padding: 24px; 
+}
+.menudemoBasicUsage .menu-demo-container {
+  min-height: 200px; 
+}
+.menudemoMenuPositionModes .md-menu-demo {
+  padding: 24px; 
+}
+.menudemoMenuPositionModes .menu-demo-container {
+  min-height: 200px; 
+}
