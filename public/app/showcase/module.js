@@ -22,7 +22,12 @@ define([
       .icon('message', 'styles/img/icons/message.svg', 24)
       .icon('copy2', 'styles/img/icons/copy2.svg', 24)
       .icon('facebook', 'styles/img/icons/facebook.svg', 24)
-      .icon('twitter', 'styles/img/icons/twitter.svg', 24);
+      .icon('twitter', 'styles/img/icons/twitter.svg', 24)
+      .icon('comment', 'stypes/img/icons/ic_comment_24px.svg', 24)
+      .icon('photo', 'stypes/img/icons/ic_photo_24px.svg', 24)
+      .icon('label', 'stypes/img/icons/ic_label_24px.svg', 24)
+      .icon('menu', 'stypes/img/icons/ic_menu_24px.svg', 24)
+      .icon('avatar', 'styles/img/icons/avatar-icons.svg', 128);
 
     $stateProvider
     .state('app.showcase', {
@@ -144,6 +149,30 @@ define([
           }
         }
       }
+    }).state('app.showcase.fab-toolbar', {
+      url: '/fab-toolbar',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/fab-toolbar.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/fab-toolbar-controller'
+            ])
+          }
+        }
+      }
+    }).state('app.showcase.grid-list', {
+      url: '/grid-list',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/grid-list.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/grid-list-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 
@@ -161,7 +190,11 @@ define([
       'styles/img/icons/message.svg',
       'styles/img/icons/copy2.svg',
       'styles/img/icons/facebook.svg',
-      'styles/img/icons/twitter.svg'
+      'styles/img/icons/twitter.svg',
+      'styles/img/icons/ic_comment_24px.svg',
+      'styles/img/icons/ic_photo_24px.svg',
+      'styles/img/icons/ic_label_24px.svg',
+      'styles/img/icons/avatar-icons.svg'
     ];
     ng.forEach(urls, function(url) {
       $http.get(url, {cache: $templateCache});
