@@ -27,12 +27,15 @@ define([
       .icon('photo', 'stypes/img/icons/ic_photo_24px.svg', 24)
       .icon('label', 'stypes/img/icons/ic_label_24px.svg', 24)
       .icon('menu', 'stypes/img/icons/ic_menu_24px.svg', 24)
-      .icon('avatar', 'styles/img/icons/avatar-icons.svg', 128);
-    $mdThemingProvider.
-      theme('default')
-      .primaryPalette("red")
-      .accentPalette('green')
-      .warnPalette('blue');
+      .icon('avatar', 'styles/img/icons/avatar-icons.svg', 128)
+      .iconSet('social', 'styles/img/icons/sets/social-icons.svg', 24)
+      .iconSet('device', 'styles/img/icons/sets/device-icons.svg', 24)
+      .iconSet('communication', 'styles/img/icons/sets/communication-icons.svg', 24)
+      .defaultIconSet('styles/img/icons/sets/core-icons.svg', 24);
+    $mdThemingProvider
+      .theme('docs-dark','default')
+      .primaryPalette('yellow')
+      .dark();
 
     $stateProvider
     .state('app.showcase', {
@@ -190,6 +193,31 @@ define([
           }
         }
       }
+    }).state('app.showcase.input', {
+      url: '/input',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/input.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/input-controller'
+            ])
+          }
+        }
+      }
+    })
+    .state('app.showcase.list', {
+      url: '/list',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/list-control.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/list-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 
@@ -211,7 +239,10 @@ define([
       'styles/img/icons/ic_comment_24px.svg',
       'styles/img/icons/ic_photo_24px.svg',
       'styles/img/icons/ic_label_24px.svg',
-      'styles/img/icons/avatar-icons.svg'
+      'styles/img/icons/avatar-icons.svg',
+      'styles/img/icons/sets/social-icons.svg',
+      'styles/img/icons/sets/device-icons.svg',
+      'styles/img/icons/sets/communication-icons.svg'
     ];
     ng.forEach(urls, function(url) {
       $http.get(url, {cache: $templateCache});

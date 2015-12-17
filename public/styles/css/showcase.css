@@ -415,3 +415,37 @@ md-radio-button {
 .material-icons.md-light.md-inactive {
   color: rgba(255, 255, 255, 0.3); 
 }
+.md-datepicker-button {
+  width: 36px; 
+}
+
+md-input-container:not(.md-input-invalid) > md-icon.email {
+  color: green;
+}
+
+md-input-container:not(.md-input-invalid) > md-icon.name {
+  color: dodgerblue;
+}
+
+md-input-container.md-input-invalid > md-icon.email,
+md-input-container.md-input-invalid > md-icon.name {
+  color: red;
+}
+md-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+md-list-item > p, .md-list-item-inner > p, .md-list-item-inner > p {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */ 
+}
+.secondary-button-padding p {
+  padding-right: 100px; 
+}
