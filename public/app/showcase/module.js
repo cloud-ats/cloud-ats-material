@@ -233,6 +233,19 @@ define([
         }
       }
     })
+    .state('app.showcase.menubar', {
+      url: '/menu-bar',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/menu-bar.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/menu-bar-controller'
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
