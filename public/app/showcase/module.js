@@ -245,6 +245,18 @@ define([
           }
         }
       }
+    }).state('app.showcase.progress-circular', {
+      url: '/progress-circular',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/progress-circular.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/progress-circular-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 
