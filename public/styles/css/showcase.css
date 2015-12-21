@@ -509,3 +509,30 @@ p.small > code {
 .visible {
   border-color: rgba(221, 221, 177, 0); 
 }
+hr {
+  width: 100%;
+  margin-top: 20px;
+  border-color: rgba(221, 221, 177, 0.1); 
+}
+.bottom-block {
+  display: block;
+  position: relative;
+  background-color: rgba(255, 235, 169, 0.25);
+  height: 85px;
+  width: 100%; 
+}
+.bottom-block > span {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 25px;
+  font-size: 0.9em; 
+}
+ md-switch {
+  margin: 0;
+  margin-left: 10px;
+  margin-top: -10px; 
+}
+md-progress-linear {
+  padding-top: 10px;
+  margin-bottom: 20px; 
+}

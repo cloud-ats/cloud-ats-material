@@ -257,6 +257,18 @@ define([
           }
         }
       }
+    }).state('app.showcase.progress-linear', {
+      url: '/progress-linear',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/progress-linear.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/progress-linear-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 
