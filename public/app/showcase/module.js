@@ -282,6 +282,18 @@ define([
           }
         }
       }
+    }).state('app.showcase.select', {
+      url: '/select',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/select.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/select-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 

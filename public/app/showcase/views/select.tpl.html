@@ -1,0 +1,77 @@
+<div ng-controller="SelectCtrl as ctrl" ng-cloak>
+	<md-content layout="row">
+
+		<md-input-container>
+			<label>Street Name</label>
+			<input type="text" ng-model="name">
+		</md-input-container>
+		<md-input-container>
+			<label>City</label>
+			<input type="text" ng-model="city">
+		</md-input-container>
+		<md-input-container>
+			<label>State</label>
+
+			<md-select ng-model="ctrl.userState">
+				<md-option ng-repeat="state in ctrl.states" value="{{state.abbrev}}">
+				{{state.abbrev}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+	</md-content>
+</div>
+
+<div ng-controller="SelectOptGroupCtrl as ctrl"  ng-cloak>
+	<md-content layout="row">
+		
+		<md-input-container>
+			<label>Size</label>
+			<md-select ng-model="size">
+				<md-option ng-repeat="size in sizes">{{size}}</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container>
+			<label>Topping</label>
+			<md-select ng-model="topping">
+				<md-optgroup label="Meats">
+					<md-option ng-repeat="topping in toppings | filter : {category : 'meat'}">{{topping.name}}</md-option>
+				</md-optgroup>
+				<md-optgroup label="Veggies">
+					<md-option ng-repeat="topping in toppings | filter: {category : 'veg'}">{{topping.name}}</md-option>
+				</md-optgroup>
+			</md-select>
+		</md-input-container>
+	</md-content>
+</div>
+
+<h4>Select with asynchonize</h4>
+<div ng-controller="SelectAsyncController" ng-cloak>
+	<md-content layout="column" layout-align="center center">
+		<md-select placeholder="Assign to user" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
+			<md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+		</md-select>
+		<p class="md-caption">You have assigned the task to : {{user ? user.name : "No one yet"}}</p>
+	</md-content>
+
+</div>
+<h4>Validate</h4>
+<div ng-controller="ValidateSelectCtrl" ng-cloak layout="column" layout-align="center center">
+	<form name="myForm">
+		<md-input-container class="md-block">
+			<label>Favorite Number</label>
+			<md-select name ="myModel" ng-model="myModel" required>
+				<md-option value="1">One</md-option>
+				<md-option value="2">Two</md-option>
+			</md-select>
+
+			<div class="errors" ng-messages="myForm.myModel.$error" ng-if="myForm.$dirty">
+				<div ng-message="required">Required</div>
+			</div>
+		</md-input-container>
+		<div layout="row">
+      <md-button ng-click="clearValue()" ng-disabled="!myModel" style="margin-right: 20px;">Clear</md-button>
+      <md-button ng-click="save()" ng-disabled="myForm.$invalid" class="md-primary" layout layout-align="center end">Save</md-button>
+    </div>
+	</form>
+</div>
