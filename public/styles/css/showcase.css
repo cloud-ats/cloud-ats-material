@@ -372,7 +372,7 @@ header h1 {
   width: 150px; }
 .usage .class {
   width: 250px; }
-md-radio-button {
+  md-radio-button {
   display: inline-block; }
 .loading {
   background-color: black;
@@ -535,4 +535,66 @@ hr {
 md-progress-linear {
   padding-top: 10px;
   margin-bottom: 20px; 
+}
+ md-radio-group {
+  width: 150px; }
+p:last-child {
+  padding-bottom: 50px; 
+}
+
+.radioValue {
+  margin-left: 5px;
+  color: #0f9d58;
+  font-weight: bold;
+  padding: 5px; 
+}
+.ipsum {
+  color: saddlebrown;
+  font-size: 0.9em; 
+}
+[ng-controller] {
+  padding-left: 20px; 
+}
+.radio-demo {
+  display: block;
+}
+div.radioDemo2 {
+  margin-bottom: 20px; 
+}
+h2 {
+  margin-left: 15px; 
+}
+p {
+  width: 400px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-top: 10px;
+  border-top: 2px solid #ddd; 
+}
+.md-checked {
+  background-color: #ECFAFB;
+  border-radius: 2px; 
+}
+md-button.md-raised, button.md-raised {
+  width: 200px; 
+}
+.row {
+  border-bottom: 1px dashed #ddd; 
+}
+div.row:last-child {
+  border-bottom: 0px dashed #ddd; 
+}
+.summary {
+  width: 100%;
+  padding-top: 10px;
+  margin-left: 25px;
+  margin-top: 20px;
+  margin-bottom: -5px; 
+}
+.title {
+  font-weight: bolder; 
+}
+.selectedUser .md-checked {
+  padding: 8px;
+  width: 100px; 
 }

@@ -32,6 +32,7 @@ define([
       .iconSet('device', 'styles/img/icons/sets/device-icons.svg', 24)
       .iconSet('communication', 'styles/img/icons/sets/communication-icons.svg', 24)
       .iconSet("call", 'styles/img/icons/sets/communication-icons.svg', 24)
+      .iconSet("avatars", 'styles/img/icons/avatar-icons.svg', 128)
       .defaultIconSet('styles/img/icons/sets/core-icons.svg', 24);
     $mdThemingProvider
       .theme('docs-dark','default')
@@ -265,6 +266,18 @@ define([
           resolve: {
             deps: $couchPotatoProvider.resolveDependencies([
               'showcase/controllers/progress-linear-controller'
+            ])
+          }
+        }
+      }
+    }).state('app.showcase.radio-button', {
+      url: '/radio-button',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/radio-button.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/radio-button-controller'
             ])
           }
         }

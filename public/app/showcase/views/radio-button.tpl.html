@@ -1,0 +1,63 @@
+<div>
+	<form ng-submit="submit()" ng-controller="RadioCtrl" ng-cloak>
+		<p>Selected Value: <span class="radioValue">{{data.group1}}</span></p>
+
+		<md-radio-group ng-model="data.group1">
+			<md-radio-button class="radio-demo" value="Apple" class="md-primary">Apple</md-radio-button>
+			<md-radio-button class="radio-demo" value="Banana">Banana</md-radio-button>
+			<md-radio-button class="radio-demo" value="Mango">Mango</md-radio-button>
+		</md-radio-group>
+		<hr/>
+
+		<p>Selected Value: <span class="radioValue">{{data.group2}}</span></p>
+		<md-radio-group ng-model="data.group2" class="md-primary">
+			<md-radio-button class="radio-demo" ng-repeat="d in radioData" ng-value="d.value"
+			ng-disabled="d.isDisabled" ng-class="{'md-align-top-left' : $index == 1}"
+			>{{d.label}}<br/>
+			<span class="ipsum" ng-if="$index ==1">
+				
+				Duis placerat lectus et justo mollis, nec sodales orci congue. Vestibulum semper non urna ac suscipit.
+        Vestibulum tempor, ligula id laoreet hendrerit, massa augue iaculis magna,sit amet dapibus tortor ligula non nibh.
+			</span>
+			</md-radio-button>
+		</md-radio-group>
+
+		<p>
+			
+			<md-button class="md-raised" ng-click="addItem()" type="button">Add</md-button>
+			<md-button class="md-raised" ng-click="removeItem()" type="button">Remove</md-button>
+		</p>
+		<hr/>
+		 <p style="margin-bottom: 0;">Graphic radio buttons need to be labeled with the <code>aria-label</code> attribute.</p>
+    <p style="margin-top: 0;">Selected Avatar: <span class="radioValue">{{ data.group3 }}</span></p>
+
+    <md-radio-group ng-model="data.group3">
+    	<md-radio-button class="radio-demo" ng-repeat="it in avatarData" ng-value="it.value" aria-label="{{it.title}}">
+    		<md-icon md-svg-icon="{{it.id}}" style="margin: 20px;margin-top: 0; width: 128px;height: 128px; }"></md-icon>
+    	</md-radio-button>
+    </md-radio-group>
+	</form>
+
+	<div ng-controller="ContactController as cc" class="radioDemo2">
+		
+		<h2>Contact List</h2>
+		<md-diviver></md-diviver>
+		<md-radio-group ng-model="cc.selectedIndex"  class="md-primary">
+			<div ng-repeat="person in cc.contacts" class="row">
+				<div flex layout="row" layout-padding layout-align="start center">
+					<div flex style="max-width: 200px;">{{person.title}}</div>
+					<md-radio-button flex ng-value="person.id">{{person.fullName}}</md-radio-button>
+				</div>
+				
+			</div>
+		</md-radio-group>
+		<md-diviver></md-diviver>
+		<div class="summary" flex layout="row" layout-align="space-between center">
+			<div flex-initial>
+				<span class="title">Selected User </span>
+				 <span class="md-checked">{{cc.selectedUser()}}</span>
+			</div>
+		</div>
+	</div>
+
+</div>
