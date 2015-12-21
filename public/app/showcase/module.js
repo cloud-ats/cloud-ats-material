@@ -294,6 +294,18 @@ define([
           }
         }
       }
+    }).state('app.showcase.side-nav', {
+      url: '/side-nav',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/side-nav.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/side-nav-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 
