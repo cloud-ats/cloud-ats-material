@@ -331,6 +331,31 @@ define([
         }
       }
     })
+    .state('app.showcase.switch', {
+      url: '/switch',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/switch.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/switch-controller'
+            ])
+          }
+        }
+      }
+    })
+    .state('app.showcase.tabs', {
+      url: '/tabs',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/tabs.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
