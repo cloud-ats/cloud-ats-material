@@ -355,6 +355,18 @@ define([
           }
         }
       }
+    }).state('app.showcase.toast', {
+      url: '/toast',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/toast.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/toast-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 
