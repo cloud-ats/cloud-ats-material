@@ -367,7 +367,32 @@ define([
           }
         }
       }
+    }).state('app.showcase.toolbar-icon', {
+      url: '/toolbar-icon',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/toolbar-icon.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/toolbar-icon-controller'
+            ])
+          }
+        }
+      }
+    }).state('app.showcase.tooltip', {
+      url: '/tooltip',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/tooltip.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/tooltip-controller'
+            ])
+          }
+        }
+      }
     })
+    
   }]);
 
   couchPotato.configureApp(module);

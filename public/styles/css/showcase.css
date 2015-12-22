@@ -565,7 +565,6 @@ h2 {
   margin-left: 15px; 
 }
 p {
-  width: 400px;
   margin-top: 10px;
   margin-left: 10px;
   padding-top: 10px;
@@ -640,3 +639,19 @@ div.row:last-child {
   width: auto !important;
   border-top: none;
 }
+.tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button,
+.tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none; 
+}
+.tooltipdemoBasicUsage .left {
+  top: 70px !important;
+  left: 56px !important; 
+}
+.tooltipdemoBasicUsage .right {
+  top: 70px !important;
+  right: 56px !important; 
+}
+
