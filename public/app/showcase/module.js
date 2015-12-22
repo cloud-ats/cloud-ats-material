@@ -306,6 +306,30 @@ define([
           }
         }
       }
+    }).state('app.showcase.slider', {
+      url: '/slider',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/slider.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/slider-controller'
+            ])
+          }
+        }
+      }
+    }).state('app.showcase.sub-header', {
+      url: '/sub-header',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/sub-header.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/sub-header-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 
