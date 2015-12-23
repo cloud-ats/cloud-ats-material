@@ -404,6 +404,18 @@ define([
           }
         }
       }
+    }).state('app.showcase.whiteframe', {
+      url: '/whiteframe',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/white-frame.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/white-frame-controller'
+            ])
+          }
+        }
+      }
     })
   }]);
 
