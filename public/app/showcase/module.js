@@ -392,7 +392,19 @@ define([
         }
       }
     })
-    
+    .state('app.showcase.virtual-repeat', {
+      url: '/virtual-repeat',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/virtual-repeat.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'showcase/controllers/virtual-repeat-controller'
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);

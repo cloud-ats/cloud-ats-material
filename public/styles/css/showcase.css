@@ -654,4 +654,54 @@ div.row:last-child {
   top: 70px !important;
   right: 56px !important; 
 }
+#vertical-container {
+  height: 292px;
+  width: 400px; 
+}
 
+.deferred.repeated-item {
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  height: 40px;
+  padding-top: 10px; 
+}
+
+md-virtual-repeat-container {
+  border: solid 1px grey; 
+}
+
+.md-virtual-repeat-container .md-virtual-repeat-offsetter {
+  padding-left: 16px; 
+}
+#horizonal-container {
+  height: 100px;
+  widows: 830px;
+}
+.repeat-item.horizontal {
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 84px;
+  padding-top: 35px;
+  text-align: center;
+  width: 50px;
+}
+
+.repeated-item-infinite {
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  height: 40px;
+  padding-top: 10px;
+}
+.repeated-item-scroll-top.header {
+  background-color: #106cc8;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.repeated-item-scroll-top {
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  height: 40px;
+  padding-top: 10px; 
+}

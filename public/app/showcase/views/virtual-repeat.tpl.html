@@ -1,0 +1,78 @@
+<div ng-controller="DeferredVirtualRepeatCtrl as ctrl">
+	<md-content layout="column">
+
+		<p>
+			Display a list of 50,000 items that load on demand in a viewport of only 7 rows.
+			<br/><br/>
+			This demo shows scroll and rendering performance gains when using <code>md-virtual repeat</code>
+			achieved withthe dynamic reuse of rows visible in the viewport area. 
+			Developers are required to explicitly use <code> md-virtual-repeat-container</code> as a wrapping parent container.
+			<br/><br/>
+			To enable load-on-demand behavior, developers must pass in a custom instance of mdVirtualRepeatModel (see the example's source for more info).
+		</p>
+		<md-virtual-repeat-container id="vertical-container">
+			<div md-virtual-repeat="item in ctrl.dynamicItems" md-on-demand class="repeated-item deferred" flex>{{item}}</div>
+		</md-virtual-repeat-container>
+	</md-content>
+
+</div>
+
+<div ng-controller="HorizontalCtrl as ctrl">
+	<md-content layout="column">
+		<p>
+			Display 1000 items in a virtual-list with viewport of only 16 columns (width=50px)
+			<br/><br/>
+			This demo shows scroll and rendering performance gains when using <code>md-virtual-repeat</code>
+			achieved with the dynamic reuse of rows visible in the viewport area. Developers are required to explicitly use <code>md-virtual-repeat-container</code> as a wrapping parent container.
+		</p>
+		<md-virtual-repeat-container id="horizonal-container" md-orient-horizontal>
+			<div md-virtual-repeat="item in ctrl.items" class="repeat-item horizontal" flex>
+				{{item}}
+			</div>
+		</md-virtual-repeat-container>
+	</md-content>
+
+</div>
+
+<div ng-controller="InfiniteScrollCtrl as ctrl" ng-cloak>
+	<md-content layout="column">
+		<p>
+			
+			 Display an infinitely growing list of items in a viewport of only 7 rows (height=40px).
+       <br/><br/>
+       This demo shows scroll and rendering performance gains when using <code>md-virtual-repeat</code>;
+       achieved with the dynamic reuse of rows visible in the viewport area. Developers are required to
+       explicitly use <code>md-virtual-repeat-container</code> as a wrapping parent container.
+       <br/><br/>
+       To enable infinite scroll behavior, developers must pass in a custom instance of
+       mdVirtualRepeatModel (see the example's source for more info).
+		</p>
+		<md-virtual-repeat-container id="vertical-container">
+			<div md-virtual-repeat="item in ctrl.infiniteItems" md-on-demand class="repeated-item-infinite" flex>
+				{{item}}
+			</div>
+		</md-virtual-repeat-container>
+	</md-content>
+</div>
+
+<div ng-controller="ScrollToCtrl as ctrl">
+	<md-content layout="column" class="md-padding">
+    <p>
+      Use the <code>md-top-index</code> attribute to watch which item is at the top of the scroll
+      container, and also to jump to a specific item.
+    </p>
+    <div class="wrapper">
+      <md-input-container>
+        <md-select ng-model="ctrl.selectedYear" aria-label="Select a Year">
+          <md-option ng-value="$index" ng-repeat="year in ctrl.years">{{ year }}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-virtual-repeat-container id="vertical-container" md-top-index="ctrl.topIndex">
+        <div md-virtual-repeat="item in ctrl.items"
+            class="repeated-item-scroll-top" ng-class="{header: item.header}" flex>
+          {{item.text}}
+        </div>
+      </md-virtual-repeat-container>
+    </div>
+  </md-content>
+</div>
