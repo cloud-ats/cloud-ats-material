@@ -417,6 +417,18 @@ define([
         }
       }
     })
+    .state('app.showcase.layout', {
+      url: '/layout',
+      views: {
+        'content@app': {
+          templateUrl: 'app/showcase/views/layout.tpl.html',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+            ])
+          }
+        }
+      }
+    })
   }]);
 
   couchPotato.configureApp(module);
